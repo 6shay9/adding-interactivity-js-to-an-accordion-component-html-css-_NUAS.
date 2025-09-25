@@ -156,5 +156,13 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+      const toggleButton = document.querySelector(".toggle-button");
+      const accordionItems = document.querySelectorAll(".accordion-item");
+
+     
+    </script>
   </body>
 </html>
