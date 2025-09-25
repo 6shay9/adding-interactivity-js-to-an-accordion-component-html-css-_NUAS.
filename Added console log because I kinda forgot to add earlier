@@ -158,29 +158,43 @@
     </div>
 
     <script>
-      const accordionHeaders = document.querySelectorAll(".accordion-header");
-      const toggleButton = document.querySelector(".toggle-button");
-      const accordionItems = document.querySelectorAll(".accordion-item");
+      
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  const toggleButton = document.querySelector(".toggle-button");
+  const accordionItems = document.querySelectorAll(".accordion-item");
 
-      accordionHeaders.forEach(header => {
-        header.addEventListener("click", () => {
-          const item = header.parentElement;
-          item.classList.toggle("active");
-        });
-      });
+ 
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      item.classList.toggle("active");
 
-      toggleButton.addEventListener("click", () => {
-        const allOpen = Array.from(accordionItems).every(item =>
-          item.classList.contains("active")
-        );
-        if (allOpen) {
-          accordionItems.forEach(item => item.classList.remove("active"));
-          toggleButton.textContent = "Show All Sections";
-        } else {
-          accordionItems.forEach(item => item.classList.add("active"));
-          toggleButton.textContent = "Hide All Sections";
-        }
-      });
-    </script>
+      if (item.classList.contains("active")) {
+        console.log(`${header.textContent} is now OPEN`);
+      } else {
+        console.log(`${header.textContent} is now CLOSED`);
+      }
+    });
+  });
+
+ 
+  toggleButton.addEventListener("click", () => {
+    const allOpen = Array.from(accordionItems).every(item =>
+      item.classList.contains("active")
+    );
+
+    if (allOpen) {
+      accordionItems.forEach(item => item.classList.remove("active"));
+      toggleButton.textContent = "Show All Sections";
+      console.log("All sections CLOSED by toggle button");
+    } else {
+      accordionItems.forEach(item => item.classList.add("active"));
+      toggleButton.textContent = "Hide All Sections";
+      console.log("All sections OPENED by toggle button");
+    }
+  });
+</script>
+
+    
   </body>
 </html>
