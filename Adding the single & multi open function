@@ -169,6 +169,18 @@
         });
       });
 
+      toggleButton.addEventListener("click", () => {
+        const allOpen = Array.from(accordionItems).every(item =>
+          item.classList.contains("active")
+        );
+        if (allOpen) {
+          accordionItems.forEach(item => item.classList.remove("active"));
+          toggleButton.textContent = "Show All Sections";
+        } else {
+          accordionItems.forEach(item => item.classList.add("active"));
+          toggleButton.textContent = "Hide All Sections";
+        }
+      });
     </script>
   </body>
 </html>
