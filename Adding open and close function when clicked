@@ -162,7 +162,13 @@
       const toggleButton = document.querySelector(".toggle-button");
       const accordionItems = document.querySelectorAll(".accordion-item");
 
-     
+      accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+          const item = header.parentElement;
+          item.classList.toggle("active");
+        });
+      });
+
     </script>
   </body>
 </html>
